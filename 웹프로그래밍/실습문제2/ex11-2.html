@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11-2</title>
+</head>
+<body>
+    <h2>다음 번에 마트가면 사와야 할 것(동적 쇼핑 리스트)</h2>
+    항목을 입력하시오: <input id="input" type="text">
+    <button onclick="addItem()">항목 추가</button>
+    <ul id="list"></ul>
+
+    <script>
+        function addItem() {
+            let input = document.getElementById("input");
+            let text = input.value;
+            let li = document.createElement("li");
+            let deleteBtn = document.createElement("button");
+            li.innerHTML = text + "&nbsp";
+            deleteBtn.innerHTML = "항목 삭제";
+            deleteBtn.onclick = function () {
+                li.parentNode.removeChild(li);
+            };
+
+            li.appendChild(deleteBtn);
+            document.getElementById("list").appendChild(li);
+        }
+    </script>
+</body>
+</html>

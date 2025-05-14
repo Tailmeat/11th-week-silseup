@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11-1</title>
+
+    <style>
+        img {
+            width: 200px;
+        }
+
+        #switch {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img id="switch" src="images/off.png" onclick="onoff()">
+    <img id="bulb" src="images/offbulb.png">
+
+    <script>
+        let isOn = false;
+        let switchImg = document.getElementById("switch");
+        let bulb = document.getElementById("bulb");
+
+        function onoff() {
+            if (isOn) {
+                switchImg.src = "images/off.png";
+                bulb.src = "images/offbulb.png";
+            } else {
+                switchImg.src = "images/on.png";
+                bulb.src = "images/onbulb.png"
+            }
+            isOn = !isOn;
+        }
+    </script>
+</body>
+</html>
